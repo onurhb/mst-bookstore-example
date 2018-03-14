@@ -14,9 +14,6 @@ const BookStore = types
         },
         get sortedAvailableBooks() {
             return sortBooks(self.books.values())
-        },
-        getBookById(id) {
-            return self.books.get(id);
         }
     }))
     .actions(self => {
@@ -25,7 +22,6 @@ const BookStore = types
         }
 
         function updateBooks(json) {
-            self.books.values().forEach(book => (book.isAvailable = false))
             json.forEach(bookJson => {
                 self.books.put(bookJson)
                 self.books.get(bookJson.id).isAvailable = true

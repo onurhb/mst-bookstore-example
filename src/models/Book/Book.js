@@ -6,13 +6,15 @@ const Book = types.model({
   author: types.string,
   price: types.number,
   discount: types.number,
-  stars: types.optional(types.number, 0),
+  favorite: false
 })
 .views(self => ({
-  
-}))
-.actions(self => ({
-  
+  get discountPrice() {
+    return self.price - self.discount;
+  },
+  get getSelf() {
+    return self;
+  }
 }));
 
 export default Book;

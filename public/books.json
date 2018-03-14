@@ -10,7 +10,7 @@
     "inStock" : true,
     "price" : 12.50,
     "pages_i" : 384,
-    "discount": 0
+    "discount": 5
   }
 ,
   {
@@ -24,7 +24,7 @@
     "inStock" : true,
     "price" : 6.49,
     "pages_i" : 304,
-    "discount": 0
+    "discount": 0.41
   }
 ,
   {
@@ -37,7 +37,7 @@
     "inStock" : true,
     "price" : 3.07,
     "pages_i" : 64,
-    "discount": 0
+    "discount": 1
   }
 ,
   {

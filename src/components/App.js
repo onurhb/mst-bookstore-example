@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 // Components
-import { Tab, Container } from 'semantic-ui-react'
+import { Tab } from 'semantic-ui-react'
 import AllBooks from '../containers/Tabs/AllBooks';
 
 // Styles
@@ -13,8 +13,8 @@ class App extends Component {
   render() {
     const panes = [
       { key: 0, menuItem: 'Books', render: () => <AllBooks/> },
-      { key: 1, menuItem: 'My Books', render: () => <Tab.Pane as={Container} attached={false}>Tab 3 Content</Tab.Pane> },
-      { key: 2, menuItem: { icon: 'star', content: 'Wishlist' }, render: () => <Tab.Pane as={Container} attached={false}>Tab 1 Content</Tab.Pane> },
+      { key: 1, menuItem: 'My Books', render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane> },
+      { key: 2, menuItem: { icon: 'star', content: 'Wishlist' }, render: () => <Tab.Pane attached={false}>Tab 1 Content</Tab.Pane> },
     ]
 
     return (

@@ -9,7 +9,8 @@ const Store = types.model({
     books: {}
   }),
   user: types.optional(UserStore, {
-    boughtBooks: []
+    boughtBooks: [],
+    wishList: []
   })
 }).views(self => ({
   get fetch() {

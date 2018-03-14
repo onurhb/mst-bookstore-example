@@ -15,7 +15,7 @@ import App from './components/App';
 
 // Create store  with dependency injection
 const fetcher = url => window.fetch(url).then(response => new Promise((resolve, reject) => {
-    setTimeout(() => resolve(response.json()), 1000)
+    setTimeout(() => resolve(response.json()), 500)
 }))
 const store = Store.create(
     {},
