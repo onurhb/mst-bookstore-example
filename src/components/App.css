@@ -9,5 +9,30 @@
 .content {
   width: 720px;
   margin: 0 auto;
-  margin-top: -80px;
+  margin-top: -180px;
+}
+
+.title {
+  top: 10px;
+  margin-bottom: 25px;
+}
+
+
+.title h1 {
+  font-size: 5rem;
+  color: #462d71;
+  font-weight: 600;
+  animation: fadeInDown 0.5s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

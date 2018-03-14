@@ -9,20 +9,10 @@ const Book = types.model({
   stars: types.optional(types.number, 0),
 })
 .views(self => ({
-  get getPrice() {
-
-  }
+  
 }))
 .actions(self => ({
-  setPrice(price) {
-    self.price = price;
-  },
-  setDiscount(discount) {
-    self.discount = discount;
-  },
-  setStars(stars) {
-    self.stars = stars;
-  }
+  
 }));
 
 export default Book;

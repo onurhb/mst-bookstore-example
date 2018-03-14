@@ -14,6 +14,9 @@ const BookStore = types
         },
         get sortedAvailableBooks() {
             return sortBooks(self.books.values())
+        },
+        getBookById(id) {
+            return self.books.get(id);
         }
     }))
     .actions(self => {
