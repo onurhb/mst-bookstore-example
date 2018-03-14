@@ -17,12 +17,16 @@ import App from './components/App';
 const fetcher = url => window.fetch(url).then(response => new Promise((resolve, reject) => {
     setTimeout(() => resolve(response.json()), 500)
 }))
+
 const store = Store.create(
     {},
     {
         fetch: fetcher
     }
 )
+
+// Initialize store with books
+store.books.loadBooks();
 
 ReactDOM.render(
     <Provider {...store}>

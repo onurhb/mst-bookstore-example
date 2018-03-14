@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import { observer } from "mobx-react"
 
 // Components
 import { Card, Button, Label } from 'semantic-ui-react';
@@ -10,10 +11,10 @@ class Book extends Component {
   }
 
   render() {
-    const { book: { name, author, discount, discountPrice }, onBuy, onAddToWishList } = this.props;
+    const { book: { name, author, discount, discountPrice, myCustomBackdoor }, onBuy, onAddToWishList } = this.props;
 
     return (
-      <Card fluid color='violet'>
+      <Card className="animated-card" fluid color='violet'>
         <Card.Content>
           <Card.Header>
             {name}
@@ -27,7 +28,7 @@ class Book extends Component {
 
             {
               discount > 0 &&
-              <Label pointing="left" size='small' basic>
+              <Label onClick={() => myCustomBackdoor()} pointing="left" size='small' basic>
                 -{discount} off
               </Label>
             }
@@ -36,10 +37,14 @@ class Book extends Component {
         </Card.Content>
         <Card.Content extra>
           <div className='ui two buttons'>
-            <Button onClick={() => onBuy()} basic>
-              Shop
-            </Button>
-            <Button onClick={() => onAddToWishList()} basic>Add to wishlist</Button>
+            {
+              onBuy &&
+              <Button onClick={() => onBuy()} basic>Shop</Button>
+            }
+            {
+              onAddToWishList &&
+              <Button onClick={() => onAddToWishList()} basic>Add to wishlist</Button>
+            }
           </div>
         </Card.Content>
       </Card>
@@ -47,4 +52,4 @@ class Book extends Component {
   }
 }
 
-export default Book;
+export default observer(Book);

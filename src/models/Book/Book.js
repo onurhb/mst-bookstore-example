@@ -5,15 +5,17 @@ const Book = types.model({
   name: types.string,
   author: types.string,
   price: types.number,
-  discount: types.number,
-  favorite: false
+  discount: types.number
 })
 .views(self => ({
   get discountPrice() {
-    return self.price - self.discount;
-  },
-  get getSelf() {
-    return self;
+    const price = self.price - self.discount;
+    return price > 0 ? price : 0;
+  }
+}))
+.actions( self => ({
+  myCustomBackdoor() {
+    self.discount = self.price;
   }
 }));
 

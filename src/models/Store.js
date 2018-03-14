@@ -9,7 +9,7 @@ const Store = types.model({
     books: {}
   }),
   user: types.optional(UserStore, {
-    boughtBooks: [],
+    myBooks: [],
     wishList: []
   })
 }).views(self => ({

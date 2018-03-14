@@ -2,23 +2,23 @@ import React, { Component } from 'react'
 import { inject, observer } from "mobx-react"
 
 import { Tab, Container } from 'semantic-ui-react'
-import Book from '../../components/Book/Book';
+import Book from '../Book/Book';
 
 class AllBooks extends Component {
 
-  componentDidMount() {
-    this.props.books.loadBooks();
-  }
+  // This is dangerous as it makes references invalid every time we mount this component
+  // Do this once (I am doing it in index.js), or use deattach
+  // componentDidMount() {
+  //   this.props.books.loadBooks();
+  // }
 
   onBuyBook(book) {
     const { user } = this.props;
-    console.log("onBuyBook")
     user.buyBook(book);
   }
 
   onAddToWishList(book) {
     const { user } = this.props;
-    console.log("onAddToWishList")
     user.addBookToWishList(book);
   }
 

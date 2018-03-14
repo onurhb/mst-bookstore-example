@@ -1,5 +1,5 @@
 
-import { types, getRoot, flow } from "mobx-state-tree"
+import { types, getRoot, flow, detach } from "mobx-state-tree"
 
 import Book from './Book';
 
@@ -23,6 +23,11 @@ const BookStore = types
 
         function updateBooks(json) {
             json.forEach(bookJson => {
+                // const existingBook = self.books.values().find(book => book.id === bookJson.id);
+                // if (existingBook) {
+                //     detach(existingBook);
+                // }
+
                 self.books.put(bookJson)
                 self.books.get(bookJson.id).isAvailable = true
             })
@@ -41,7 +46,8 @@ const BookStore = types
 
         return {
             updateBooks,
-            loadBooks
+            loadBooks,
+            markLoading
         }
     })
 
