@@ -15,11 +15,11 @@ class MyBooks extends Component {
         return (
             <Tab.Pane as={Container}>
                 {
-                    user.myBooks.map(boughtBook =>
+                    user.myBooks.map(book =>
                         <Book
-                            key={boughtBook.book.id}
-                            onFavorite={this.onFavorite.bind(this, boughtBook.book)}
-                            book={boughtBook.book}
+                            key={book.id}
+                            onFavorite={this.onFavorite.bind(this,book)}
+                            book={book}
                         />)
                 }
             </Tab.Pane>
