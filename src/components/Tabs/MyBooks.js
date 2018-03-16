@@ -4,6 +4,11 @@ import { inject, observer } from "mobx-react"
 import { Tab, Container } from 'semantic-ui-react'
 import Book from '../Book/Book';
 
+
+/**
+ * By passing book object as a whole (book={book}) we must make Book component observer aswell (which we don't want)
+ */
+
 class MyBooks extends Component {
     onFavorite(book) {
 
@@ -19,7 +24,8 @@ class MyBooks extends Component {
                         <Book
                             key={book.id}
                             onFavorite={this.onFavorite.bind(this,book)}
-                            book={book}
+                            discountPrice={book.discountPrice}
+                            {...book}
                         />)
                 }
             </Tab.Pane>

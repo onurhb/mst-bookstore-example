@@ -21,7 +21,8 @@ class WishList extends Component {
                         <Book
                             key={book.id}
                             onBuy={this.onBuyBook.bind(this, book)}
-                            book={book}
+                            discountPrice={book.discountPrice}
+                            {...book}
                         />)
                 }
             </Tab.Pane>

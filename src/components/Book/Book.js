@@ -11,7 +11,7 @@ class Book extends Component {
   }
 
   render() {
-    const { book: { name, author, discount, discountPrice, myCustomBackdoor }, onBuy, onAddToWishList } = this.props;
+    const { name, author, discount, discountPrice, myCustomBackdoor, onBuy, onAddToWishList } = this.props;
 
     return (
       <Card className="animated-card" fluid color='violet'>
@@ -28,7 +28,7 @@ class Book extends Component {
 
             {
               discount > 0 &&
-              <Label onClick={() => myCustomBackdoor()} pointing="left" size='small' basic>
+              <Label onClick={() => myCustomBackdoor && myCustomBackdoor()} pointing="left" size='small' basic>
                 -{discount} off
               </Label>
             }
@@ -52,4 +52,4 @@ class Book extends Component {
   }
 }
 
-export default observer(Book);
+export default Book;

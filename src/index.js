@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import inspect from 'mobx-devtools-mst';
 import { Provider } from "mobx-react"
+import { addMiddleware } from 'mobx-state-tree';
 
 
 // CSS
@@ -24,6 +25,14 @@ const store = Store.create(
         fetch: fetcher
     }
 )
+
+// Middleware!
+const requiresAuth = ['myCustomBackdoor'];
+const queue = []
+const disposer = addMiddleware(store, (action, next) => {
+    console.log(action.name)
+    next(action);
+});
 
 // Initialize store with books
 store.books.loadBooks();

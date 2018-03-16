@@ -27,14 +27,15 @@ class AllBooks extends Component {
 
     return (
       <Tab.Pane as={Container} loading={books.isLoading}>
-        {/* Don't use spread operator (does not include getters):  <Book {...book} /> */}
         {
           books.sortedAvailableBooks.map(book =>
             <Book
               key={book.id}
               onAddToWishList={this.onAddToWishList.bind(this, book)}
               onBuy={this.onBuyBook.bind(this, book)}
-              book={book}
+              discountPrice={book.discountPrice}
+              myCustomBackdoor={book.myCustomBackdoor}
+              {...book}
             />)
         }
       </Tab.Pane>

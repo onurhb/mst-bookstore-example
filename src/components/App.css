@@ -10,6 +10,7 @@
   width: 720px;
   margin: 0 auto;
   margin-top: -180px;
+  padding-bottom: 25px;
 }
 
 .title {
@@ -17,12 +18,17 @@
   margin-bottom: 25px;
 }
 
-
 .title h1 {
   font-size: 5rem;
   color: #462d71;
   font-weight: 600;
   animation: fadeInDown 0.5s;
+}
+
+.user-coins {
+  color: whitesmoke;
+  font-size: 18px;
+  text-align: end;
 }
 
 .animated-card {

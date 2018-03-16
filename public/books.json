@@ -52,4 +52,18 @@
     "pages_i" : 475,
     "discount": 0
   }
+
+  ,
+  {
+    "id" : "978-1933988172",
+    "cat" : ["book","paperback"],
+    "name" : "Bitconnect Ruined My Life, First Edition",
+    "author" : "A man who sold his kidneys",
+    "sequence_i" : 1,
+    "genre_s" : "IT",
+    "inStock" : true,
+    "price" : 120.50,
+    "pages_i" : 475,
+    "discount": 10.50
+  }
 ]

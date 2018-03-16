@@ -6,6 +6,7 @@ import { Tab } from 'semantic-ui-react'
 import AllBooks from './Tabs/AllBooks';
 import WishList from './Tabs/WishList';
 import MyBooks from './Tabs/MyBooks';
+import Coins from './User/Coins';
 
 // Styles
 import './App.css';
@@ -25,6 +26,7 @@ class App extends Component {
         <div className="content">
           <div className="title">
             <h1>MST Bookstore</h1>
+            <Coins/>
           </div>
           <Tab menu={{ attached: false }} panes={panes} />
         </div>

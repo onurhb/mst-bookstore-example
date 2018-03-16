@@ -15,7 +15,7 @@ const Book = types.model({
 }))
 .actions( self => ({
   myCustomBackdoor() {
-    self.discount = self.price;
+    self.discount = Math.floor(Math.random() * 50) + 1;
   }
 }));
 
