@@ -27,8 +27,6 @@ const store = Store.create(
 )
 
 // Middleware!
-const requiresAuth = ['myCustomBackdoor'];
-const queue = []
 const disposer = addMiddleware(store, (action, next) => {
     console.log(action.name)
     next(action);

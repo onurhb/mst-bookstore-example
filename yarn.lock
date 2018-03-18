@@ -5586,6 +5586,10 @@ react-dom@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-emoji-rain@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-emoji-rain/-/react-emoji-rain-1.0.5.tgz#9b643ed192817580228e0da1170f487bbc4f40c9"
+
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"

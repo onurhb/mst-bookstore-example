@@ -14,6 +14,9 @@ const Book = types.model({
   }
 }))
 .actions( self => ({
+  afterCreate() {
+      console.log("Created a new book", self.id)
+  },
   myCustomBackdoor() {
     self.discount = Math.floor(Math.random() * 50) + 1;
   }

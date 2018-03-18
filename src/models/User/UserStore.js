@@ -4,8 +4,8 @@ import { types } from "mobx-state-tree"
 import Book from "../Book/Book";
 
 const UserStore = types.model({
-  myBooks: types.array(Book),
-  wishList: types.array(types.reference(Book)),
+  myBooks: types.optional(types.array(Book), []),
+  wishList: types.optional(types.array(types.reference(Book)), []),
   coins: 100,
 }).actions(self => ({
   buyBook(book) {

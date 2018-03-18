@@ -6,7 +6,7 @@ import Book from './Book';
 const BookStore = types
     .model({
         isLoading: false,
-        books: types.map(Book)
+        books: types.optional(types.map(Book), {})
     })
     .views(self => ({
         get store() {

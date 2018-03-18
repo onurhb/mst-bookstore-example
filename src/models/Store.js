@@ -5,13 +5,8 @@ import BookStore from './Book/BookStore';
 import UserStore from './User/UserStore';
 
 const Store = types.model({
-  books: types.optional(BookStore, {
-    books: {}
-  }),
-  user: types.optional(UserStore, {
-    myBooks: [],
-    wishList: []
-  })
+  books: types.optional(BookStore, {}),
+  user: types.optional(UserStore, {})
 }).views(self => ({
   get fetch() {
     return getEnv(self).fetch
